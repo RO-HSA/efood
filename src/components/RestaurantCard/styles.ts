@@ -46,12 +46,16 @@ export const Description = styled.p`
 
 export const Rating = styled.div`
   display: flex;
-  align-items: center;
   font-size: 18px;
   font-weight: bold;
 
   span {
     margin-right: 8px;
+  }
+
+  img {
+    width: 21px;
+    height: 20px;
   }
 `
 
