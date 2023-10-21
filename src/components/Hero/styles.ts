@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 
 import backgroundImage from '../../images/header-vector.svg'
+import { Logo } from '../../styles'
 
 export const Background = styled.header`
   height: 384px;
   background-color: var(--headerColor);
   background-image: url(${backgroundImage});
+  background-size: cover;
 
-  img {
-    width: 125px;
-    height: 57px;
-    margin-top: 64px;
+  ${Logo} {
+    margin-top: 40px;
     margin-bottom: 138px;
   }
 

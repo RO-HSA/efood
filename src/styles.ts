@@ -1,8 +1,9 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
   :root {
     --headerColor: #FFEBD9;
+    --bgColor: #FFF8F2;
     --mainColor: #E66767;
   }
 
@@ -11,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    list-style: none;
   }
 
   .container {
@@ -18,4 +20,9 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
     margin: 0 auto;
   }
+`
+
+export const Logo = styled.img`
+  width: 125px;
+  height: 57px;
 `
