@@ -3,16 +3,15 @@ import { useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import RestaurantCard from '../RestaurantCard'
 
-import { MainWrapper } from '../../styles'
-import { RestaurantListWrapper } from './styles'
+import { RestaurantList, RestaurantWrapper } from './styles'
 
 const RestaurantsList = () => {
   const { items } = useSelector((state: RootReducer) => state.restaurant)
 
   return (
-    <MainWrapper>
+    <RestaurantWrapper>
       <div className="container">
-        <RestaurantListWrapper>
+        <RestaurantList>
           {items.map((item) => (
             <RestaurantCard
               key={item.id}
@@ -23,9 +22,9 @@ const RestaurantsList = () => {
               description={item.description}
             />
           ))}
-        </RestaurantListWrapper>
+        </RestaurantList>
       </div>
-    </MainWrapper>
+    </RestaurantWrapper>
   )
 }
 

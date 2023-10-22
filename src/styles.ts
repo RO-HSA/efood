@@ -26,8 +26,3 @@ export const Logo = styled.img`
   width: 125px;
   height: 57px;
 `
-
-export const MainWrapper = styled.main`
-  background-color: var(--bgColor);
-  padding: 80px 0 120px 0;
-`

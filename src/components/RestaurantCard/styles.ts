@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import { TagContainer } from '../Tag/styles'
+
 import { Link } from 'react-router-dom'
+import { TagContainer } from '../Tag/styles'
 
 export const CardWrapper = styled.li`
   max-height: 398px;
@@ -12,10 +13,6 @@ export const CardWrapper = styled.li`
   img {
     width: 100%;
     margin-bottom: -5px;
-  }
-
-  ${TagContainer} {
-    margin-right: 8px;
   }
 `
 
@@ -59,16 +56,22 @@ export const Rating = styled.div`
   }
 `
 
-export const Infos = styled.div`
+export const Infos = styled.ul`
   position: absolute;
   top: 16px;
   right: 16px;
+
+  ${TagContainer} {
+    margin-left: 8px;
+  }
 `
 
 export const Button = styled(Link)`
   background-color: var(--mainColor);
   color: var(--headerColor);
-  padding: 4px;
+  padding: 4px 6px;
   text-decoration: none;
   font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
 `

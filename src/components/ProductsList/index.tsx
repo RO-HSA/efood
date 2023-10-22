@@ -2,9 +2,8 @@ import { useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 
 import { Product } from '../../App'
-import { MainWrapper } from '../../styles'
 import ProductCard from '../ProductCard'
-import { ProductListWrapper } from './styles'
+import { ProductList, ProductWrapper } from './styles'
 
 import Banner from '../Banner'
 import pizzaImage from '../../images/pizza-margerita.png'
@@ -130,9 +129,9 @@ const ProductsList = () => {
             : hioki
         }
       />
-      <MainWrapper>
+      <ProductWrapper>
         <div className="container">
-          <ProductListWrapper>
+          <ProductList>
             {filteredRestaurant.map(({ title, description, image }) => (
               <ProductCard
                 key={title}
@@ -141,9 +140,9 @@ const ProductsList = () => {
                 image={image}
               />
             ))}
-          </ProductListWrapper>
+          </ProductList>
         </div>
-      </MainWrapper>
+      </ProductWrapper>
     </>
   )
 }

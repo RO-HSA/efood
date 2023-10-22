@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux'
 
+import { select } from '../../store/reducers/restaurants'
 import {
   Button,
   CardWrapper,
@@ -12,7 +13,6 @@ import {
 
 import star from '../../images/star.png'
 import Tag from '../Tag'
-import { select } from '../../store/reducers/restaurants'
 
 type Props = {
   cover: string
