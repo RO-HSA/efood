@@ -2,8 +2,6 @@ import styled from 'styled-components'
 
 import backgroundImage from '../../images/header-vector.svg'
 
-import bannerImage from '../../images/tarttoria.png'
-
 export const HeaderWrapper = styled.header`
   display: flex;
   background-color: var(--headerColor);
@@ -23,8 +21,4 @@ export const PageTitle = styled.h4`
   font-size: 18px;
   font-weight: 900;
   line-height: 21px;
-`
-
-export const Banner = styled.div`
-  background-image: ${bannerImage};
 `

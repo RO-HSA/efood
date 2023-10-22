@@ -1,10 +1,12 @@
+import Footer from '../../components/Footer'
 import Header from '../../components/Header'
-import RestaurantsList from '../../components/RestaurantsList'
+import ProductsList from '../../components/ProductsList'
 
 const Profile = () => (
   <>
     <Header />
-    <RestaurantsList />
+    <ProductsList />
+    <Footer />
   </>
 )
 

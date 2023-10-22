@@ -1,13 +1,34 @@
 import { BrowserRouter } from 'react-router-dom'
 import PageRoutes from './routes'
 import { GlobalStyles } from './styles'
+import { Provider } from 'react-redux'
+import { store } from './store'
+
+export type Restaurant = {
+  id: number
+  cover: string
+  tags: string[]
+  title: string
+  rating: number
+  description: string
+}
+
+export type Product = {
+  restaurant: string
+  nationality: string
+  title: string
+  description: string
+  image: string
+}
 
 function App() {
   return (
-    <BrowserRouter>
-      <GlobalStyles />
-      <PageRoutes />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <GlobalStyles />
+        <PageRoutes />
+      </BrowserRouter>
+    </Provider>
   )
 }
 
