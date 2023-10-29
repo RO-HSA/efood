@@ -1,6 +1,3 @@
-import { useDispatch } from 'react-redux'
-
-import { select } from '../../store/reducers/restaurants'
 import {
   Button,
   CardWrapper,
@@ -11,10 +8,12 @@ import {
   Title
 } from './styles'
 
-import star from '../../images/star.png'
+import star from '../../assets/images/star.png'
 import Tag from '../Tag'
+import slicer from '../../utils/stringSlicer'
 
 type Props = {
+  id: number
   cover: string
   tags: string[]
   title: string
@@ -22,9 +21,14 @@ type Props = {
   description: string
 }
 
-const RestaurantCard = ({ cover, tags, title, rating, description }: Props) => {
-  const dispatch = useDispatch()
-
+const RestaurantCard = ({
+  id,
+  cover,
+  tags,
+  title,
+  rating,
+  description
+}: Props) => {
   return (
     <CardWrapper>
       <img src={cover} alt={title} />
@@ -41,12 +45,8 @@ const RestaurantCard = ({ cover, tags, title, rating, description }: Props) => {
             <img src={star} alt="Star" />
           </Rating>
         </div>
-        <Description>{description}</Description>
-        <Button
-          to={'/profile'}
-          type="button"
-          onClick={() => dispatch(select(title))}
-        >
+        <Description>{slicer(description, 248)}</Description>
+        <Button to={`/profile/${id}`} type="button">
           Saiba mais
         </Button>
       </InformationWrapper>

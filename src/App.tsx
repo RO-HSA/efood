@@ -4,15 +4,6 @@ import { GlobalStyles } from './styles'
 import { Provider } from 'react-redux'
 import { store } from './store'
 
-export type Restaurant = {
-  id: number
-  cover: string
-  tags: string[]
-  title: string
-  rating: number
-  description: string
-}
-
 export type Product = {
   restaurant: string
   nationality: string

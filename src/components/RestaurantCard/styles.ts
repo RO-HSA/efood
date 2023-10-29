@@ -10,7 +10,9 @@ export const CardWrapper = styled.li`
   background-color: #ffffff;
   position: relative;
 
-  img {
+  > img {
+    max-width: 472px;
+    max-height: 217px;
     width: 100%;
     margin-bottom: -5px;
   }

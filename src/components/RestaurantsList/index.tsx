@@ -1,25 +1,40 @@
-import { useSelector } from 'react-redux'
-
-import { RootReducer } from '../../store'
 import RestaurantCard from '../RestaurantCard'
-
+import { useGetRestaurantsQuery } from '../../services/api'
 import { RestaurantList, RestaurantWrapper } from './styles'
+import { Restaurant } from '../../pages/Home'
 
 const RestaurantsList = () => {
-  const { items } = useSelector((state: RootReducer) => state.restaurant)
+  const { data: restaurants } = useGetRestaurantsQuery()
+
+  const getRestaurantTags = (restaurant: Restaurant) => {
+    const tags = []
+
+    if (restaurant.destacado) {
+      tags.push('Destaque da semana')
+    }
+
+    if (restaurant.tipo) {
+      const capitalizedString =
+        restaurant.tipo.charAt(0).toUpperCase() + restaurant.tipo.slice(1)
+      tags.push(capitalizedString)
+    }
+
+    return tags
+  }
 
   return (
     <RestaurantWrapper>
       <div className="container">
         <RestaurantList>
-          {items.map((item) => (
+          {restaurants?.map((restaurant) => (
             <RestaurantCard
-              key={item.id}
-              cover={item.cover}
-              title={item.title}
-              rating={item.rating}
-              tags={item.tags}
-              description={item.description}
+              key={restaurant.id}
+              id={restaurant.id}
+              cover={restaurant.capa}
+              title={restaurant.titulo}
+              rating={restaurant.avaliacao}
+              tags={getRestaurantTags(restaurant)}
+              description={restaurant.descricao}
             />
           ))}
         </RestaurantList>

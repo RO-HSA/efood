@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import { Props } from '.'
-
 export const BannerSubtitle = styled.h3`
   font-size: 32px;
   line-height: 38px;
@@ -18,9 +16,9 @@ export const BannerTitle = styled.h2`
   color: #ffffff;
 `
 
-export const BannerWrapper = styled.div<Omit<Props, 'title' | 'subtitle'>>`
-  background-image: url(${({ coverImage }) => coverImage});
+export const BannerWrapper = styled.div`
   background-size: cover;
+  background-repeat: no-repeat;
   height: 280px;
   position: relative;
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import backgroundImage from '../../images/header-vector.svg'
+import backgroundImage from '../../assets/images/header-vector.svg'
 
 export const HeaderWrapper = styled.header`
   display: flex;

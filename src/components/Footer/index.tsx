@@ -2,10 +2,10 @@ import { FooterWrapper, SocialMedia, DisclaimerText } from './styles'
 
 import { Logo } from '../../styles'
 
-import logo from '../../images/logo.png'
-import instagram from '../../images/instagram.png'
-import facebook from '../../images/facebook.png'
-import twitter from '../../images/twitter.png'
+import logo from '../../assets/images/logo.png'
+import instagram from '../../assets/images/instagram.png'
+import facebook from '../../assets/images/facebook.png'
+import twitter from '../../assets/images/twitter.png'
 
 const Footer = () => (
   <FooterWrapper>

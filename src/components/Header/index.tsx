@@ -1,6 +1,6 @@
 import { HeaderWrapper, PageTitle } from './styles'
 
-import logo from '../../images/logo.png'
+import logo from '../../assets/images/logo.png'
 import { Logo } from '../../styles'
 
 const Header = () => (
