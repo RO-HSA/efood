@@ -6,9 +6,9 @@ import { Logo } from '../../styles'
 const Header = () => (
   <HeaderWrapper>
     <div className="container">
-      <PageTitle>Restaurantes</PageTitle>
+      <PageTitle to={'/'}>Restaurantes</PageTitle>
       <Logo src={logo} alt="logo" />
-      <PageTitle>0 produtos no carrinho</PageTitle>
+      <h4>0 produtos no carrinho</h4>
     </div>
   </HeaderWrapper>
 )

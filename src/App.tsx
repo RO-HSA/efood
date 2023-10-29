@@ -1,8 +1,6 @@
 import { BrowserRouter } from 'react-router-dom'
 import PageRoutes from './routes'
 import { GlobalStyles } from './styles'
-import { Provider } from 'react-redux'
-import { store } from './store'
 
 export type Product = {
   restaurant: string
@@ -14,12 +12,10 @@ export type Product = {
 
 function App() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <GlobalStyles />
-        <PageRoutes />
-      </BrowserRouter>
-    </Provider>
+    <BrowserRouter>
+      <GlobalStyles />
+      <PageRoutes />
+    </BrowserRouter>
   )
 }
 
