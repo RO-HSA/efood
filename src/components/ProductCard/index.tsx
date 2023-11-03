@@ -1,19 +1,21 @@
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
 import {
   Card,
   ProductTitle,
   ProductDescription,
-  ProductBtn,
+  Button,
   ProductImage,
   Modal,
   ModalContent
 } from './styles'
-
+import { Menu } from '../../pages/Home'
 import slicer from '../../utils/stringSlicer'
 import formatPrice from '../../utils/currencyFormatter'
 
 import closeButton from '../../assets/images/close.png'
-import { useState } from 'react'
-import { Menu } from '../../pages/Home'
+import { add, open } from '../../store/reducers/cart'
 
 type Props = {
   title: string
@@ -36,6 +38,8 @@ const ProductCard = ({
   price,
   id
 }: Props) => {
+  const dispatch = useDispatch()
+
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
     nome: '',
@@ -58,13 +62,35 @@ const ProductCard = ({
     })
   }
 
+  const addToCart = (
+    id: number,
+    nome: string,
+    foto: string,
+    descricao: string,
+    porcao: string,
+    preco: number
+  ) => {
+    dispatch(
+      add({
+        id,
+        nome,
+        foto,
+        descricao,
+        porcao,
+        preco
+      })
+    )
+    closeModal()
+    dispatch(open())
+  }
+
   return (
     <>
       <Card>
         <ProductImage src={image} alt={title} />
         <ProductTitle>{title}</ProductTitle>
         <ProductDescription>{slicer(description, 171)}</ProductDescription>
-        <ProductBtn
+        <Button
           onClick={() => {
             setModal({
               isVisible: true,
@@ -78,7 +104,7 @@ const ProductCard = ({
           }}
         >
           Mais detalhes
-        </ProductBtn>
+        </Button>
       </Card>
       <Modal className={modal.isVisible ? 'visible' : ''}>
         <ModalContent className="container">
@@ -90,9 +116,14 @@ const ProductCard = ({
             <ProductTitle>{title}</ProductTitle>
             <ProductDescription>{description}</ProductDescription>
             <ProductDescription>Serve: de {portion}</ProductDescription>
-            <ProductBtn>
+            <Button
+              type="button"
+              onClick={() =>
+                addToCart(id, title, image, description, portion, price)
+              }
+            >
               Adicionar ao carrinho - {formatPrice(price)}
-            </ProductBtn>
+            </Button>
           </div>
         </ModalContent>
         <div className="overlay" onClick={() => closeModal()}></div>

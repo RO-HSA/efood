@@ -8,7 +8,7 @@ export const HeaderWrapper = styled.header`
   background-color: var(--headerColor);
   background-image: url(${backgroundImage});
   background-size: cover;
-  height: 128px;
+  height: 186px;
 
   .container {
     display: flex;
@@ -18,6 +18,10 @@ export const HeaderWrapper = styled.header`
     font-size: 18px;
     font-weight: 900;
     line-height: 21px;
+
+    h4 {
+      cursor: pointer;
+    }
   }
 `
 

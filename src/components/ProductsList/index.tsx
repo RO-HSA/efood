@@ -7,22 +7,25 @@ type Props = {
 }
 
 const ProductsList = ({ products }: Props) => {
+  if (!products) {
+    return <h4>Carregando...</h4>
+  }
+
   return (
     <>
       <ProductWrapper>
         <div className="container">
           <ProductList>
             {products.map((product) => (
-              <li key={product.id}>
-                <ProductCard
-                  id={product.id}
-                  portion={product.porcao}
-                  price={product.preco}
-                  title={product.nome}
-                  description={product.descricao}
-                  image={product.foto}
-                />
-              </li>
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                portion={product.porcao}
+                price={product.preco}
+                title={product.nome}
+                description={product.descricao}
+                image={product.foto}
+              />
             ))}
           </ProductList>
         </div>

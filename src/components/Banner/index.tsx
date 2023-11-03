@@ -1,17 +1,11 @@
 import { useParams } from 'react-router-dom'
+
 import { BannerSubtitle, BannerTitle, BannerWrapper } from './styles'
-import { useEffect, useState } from 'react'
-import { Restaurant } from '../../pages/Home'
+import { useGetMenuQuery } from '../../services/api'
 
 const Banner = () => {
   const { id } = useParams()
-  const [products, setProducts] = useState<Restaurant>()
-
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setProducts(res))
-  }, [id])
+  const { data: products } = useGetMenuQuery(id!)
 
   const capitalizeType = (type: string) => {
     const capitalizedType = type.charAt(0).toUpperCase() + type.slice(1)

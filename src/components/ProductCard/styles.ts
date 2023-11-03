@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Card = styled.div`
+export const Card = styled.li`
   background-color: var(--mainColor);
   height: 338px;
   width: 320px;
@@ -28,7 +28,7 @@ export const ProductDescription = styled.p`
   color: var(--headerColor);
 `
 
-export const ProductBtn = styled.button`
+export const Button = styled.button`
   background-color: var(--headerColor);
   color: var(--mainColor);
   font-size: 14px;
@@ -111,7 +111,7 @@ export const ModalContent = styled.div`
       margin-bottom: 16px;
     }
 
-    ${ProductBtn} {
+    ${Button} {
       width: 218px;
       justify-self: end;
     }
