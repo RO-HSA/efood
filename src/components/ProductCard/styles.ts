@@ -2,8 +2,10 @@ import styled from 'styled-components'
 
 export const Card = styled.li`
   background-color: var(--mainColor);
-  height: 338px;
-  width: 320px;
+  max-height: 338px;
+  height: 100%;
+  max-width: 320px;
+  width: 100%;
   padding: 8px;
 `
 

@@ -1,10 +1,16 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
+export const breakpoints = {
+  desktop: '1024px',
+  tablet: '768px'
+}
+
 export const GlobalStyles = createGlobalStyle`
   :root {
     --headerColor: #FFEBD9;
     --bgColor: #FFF8F2;
     --mainColor: #E66767;
+    --gray: #4B4B4B;
   }
 
   * {

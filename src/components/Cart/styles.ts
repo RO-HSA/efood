@@ -2,6 +2,11 @@ import styled from 'styled-components'
 
 import trashcan from '../../assets/images/lixeira.png'
 
+type InputProps = {
+  width?: string
+  gap?: string
+}
+
 export const Overlay = styled.div`
   position: absolute;
   top: 0;
@@ -15,7 +20,7 @@ export const Overlay = styled.div`
 export const CartContainer = styled.div`
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   display: none;
@@ -85,9 +90,71 @@ export const TotalContainer = styled.div`
   color: var(--headerColor);
   font-size: 14px;
   font-weight: bold;
-  line-height: 22px;
+  line-height: 16px;
   margin-top: 40px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
+`
+
+export const CheckoutContainer = styled.div`
+  color: var(--headerColor);
+
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 16px;
+  }
+
+  .margin-top {
+    margin-top: 24px;
+  }
+
+  button {
+    margin-top: 8px;
+  }
+`
+
+export const InputGroup = styled.div<InputProps>`
+  display: block;
+  margin-top: 8px;
+
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+  }
+
+  input {
+    display: block;
+    margin-top: 8px;
+    background-color: var(--headerColor);
+    border: 1px solid var(--headerColor);
+    width: ${(props) => props.width};
+    padding: 7px;
+    color: var(--gray);
+    font-size: 14px;
+    font-weight: bold;
+  }
+`
+
+export const ShortInputGroup = styled(InputGroup)<InputProps>`
+  display: flex;
+  column-gap: ${(props) => props.gap};
+
+  ${InputGroup} {
+    margin-top: 0;
+  }
+`
+
+export const EmptyCart = styled.p`
+  font-size: 14;
+  color: var(--headerColor);
 `
